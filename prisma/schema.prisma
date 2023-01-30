@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model hometown {
+  id       Int    @id(map: "hometown_pk") @default(autoincrement())
+  id_user  Int    @map("id-user")
+  hometown String @db.VarChar(255)
+}
+
+model users {
+  id         Int    @id(map: "users_pk")
+  name       String
+  cpf        String @unique(map: "public.users_cpf_key")
+  birthMonth String
+  age        String
+}
+
+model work {
+  id      Int    @id(map: "work_pk") @default(autoincrement())
+  id_user Int    @map("id-user")
+  work    String @db.VarChar(255)
+}

@@ -1,0 +1,19 @@
+POST:/ create registerBirthday
+body: {
+    "name":"Maicon",
+    "cpf": "14111333182",
+    "birthMonth": "maio",
+    "age": 24
+}
+
+GET: /birth
+
+
+DELETE: /birth/:id
+Obs: deletes the birthday person from the past id
+
+PATCH: /birth/:id
+Obs: increases age by one
+
+GET: /birth/:id
+Obs: group the number of birthdays of the month
